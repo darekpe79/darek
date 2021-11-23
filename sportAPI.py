@@ -6,21 +6,7 @@ import json
 import streamlit as st
 import plotly.express as px
 from PIL import Image
-#url = "https://api-football-beta.p.rapidapi.com/teams/statistics"
 
-#querystring = {"team":"3498","season":"2021","league":"107"}
-
-#headers = {
-#    'x-rapidapi-host': "api-football-beta.p.rapidapi.com",
-#    'x-rapidapi-key': "3e405b6251mshd60581ae73af7bap1e26e1jsn43625ecf6667"
-#    }
-
-#response = requests.request("GET", url, headers=headers, #params=querystring)
-#print(response.text)
-
-#with open("sample.json", "w") as outfile:
-#    outfile.write(response.text)
-#%%
 with open('sample.json', 'r') as openfile:
  
     # Reading from json file
