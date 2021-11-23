@@ -1,53 +1,5 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Nov 22 17:39:32 2021
 
-@author: darek
-"""
 
-import requests
-
-url = "https://api-football-v1.p.rapidapi.com/v2/teams/league/"
-
-headers = {
-    'x-rapidapi-host': "api-football-beta.p.rapidapi.com",
-    'x-rapidapi-key': "3e405b6251mshd60581ae73af7bap1e26e1jsn43625ecf6667"
-    }
-
-response = requests.request("GET", url, headers=headers)
-
-print(response.text)
-#%%
-import requests
-
-url = "https://api-football-beta.p.rapidapi.com/teams"
-
-querystring = {"season":"2019","l":"39"}
-
-headers = {
-    'x-rapidapi-host': "api-football-beta.p.rapidapi.com",
-    'x-rapidapi-key': "3e405b6251mshd60581ae73af7bap1e26e1jsn43625ecf6667"
-    }
-
-response = requests.request("GET", url, headers=headers, params=querystring)
-
-print(response.text)
-import requests
-
-url = "https://api-football-beta.p.rapidapi.com/leagues"
-
-querystring = {"country":"poland"}
-
-headers = {
-    'x-rapidapi-host': "api-football-beta.p.rapidapi.com",
-    'x-rapidapi-key': "3e405b6251mshd60581ae73af7bap1e26e1jsn43625ecf6667"
-    }
-
-response = requests.request("GET", url, headers=headers, params=querystring).json()
-
-print(response)
-#%%
 import requests
 import pandas as pd
 import json
