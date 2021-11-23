@@ -4,7 +4,7 @@ import requests
 import pandas as pd
 import json
 import streamlit as st
-#import plotly.express as px
+import plotly.express as px
 from PIL import Image
 #url = "https://api-football-beta.p.rapidapi.com/teams/statistics"
 
