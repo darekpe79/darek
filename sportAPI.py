@@ -53,7 +53,19 @@ pd4=pd.DataFrame.from_dict(golasagainstminutes)
 df_goalsagainstminutes = pd4.rename(index={'total': 'total_against', 'percentage':'percentage_against'})
 result = df_goalsforminutes.append(df_goalsagainstminutes)
 #%% streamlit run sportAPI.py
-st.set_page_config(page_title='ŁKS STATISTICS',layout='wide')
+st.set_page_config(page_title='ŁKS STATISTICS')
+st.markdown(""" <style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+</style> """, unsafe_allow_html=True)
+padding = 0
+st.markdown(f""" <style>
+    .reportview-container .main .block-container{{
+        padding-top: {padding}rem;
+        padding-right: {padding}rem;
+        padding-left: {padding}rem;
+        padding-bottom: {padding}rem;
+    }} </style> """, unsafe_allow_html=True)
 
 st.header('ŁKS  Form: '+forma)
 st.header('Fixtures')
