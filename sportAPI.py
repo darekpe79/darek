@@ -64,8 +64,8 @@ st.header('Fixtures')
 
 st.dataframe(pd1)
 
-#fig = px.bar(pd1, x=['wins','draws','loses'], y=["home", "away", "total"], title="Played Games")
-#st.plotly_chart(fig)
+fig = px.bar(pd1, x=['wins','draws','loses'], y=["home", "away", "total"], title="Played Games")
+st.plotly_chart(fig)
 st.header('Goals')
 def left_align(df):
     left_aligned_df = df.style.set_properties(**{'text-align': 'left'})
