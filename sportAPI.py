@@ -8,11 +8,12 @@ import plotly.express as px
 from PIL import Image
 
 with open('sample.json', 'r') as openfile:
- 
+
     # Reading from json file
     json_object = json.load(openfile)
- 
-print(json.dumps(json_object, indent=4))
+our_league={'Name':['Marcin', 'Michał','Tomek', 'Darek'],'Points':['13','13','11','7']}
+our_league_df=pd.DataFrame(our_league) 
+#print(json.dumps(json_object, indent=4))
 forma=json_object['response']['form']
 fixtures=json_object['response']['fixtures']
 pd1=pd.DataFrame.from_dict(fixtures)
@@ -54,7 +55,7 @@ result = df_goalsforminutes.append(df_goalsagainstminutes)
 #%% streamlit run sportAPI.py
 st.set_page_config(page_title='ŁKS STATISTICS',layout='wide')
 
-st.header('Form: '+forma)
+st.header('ŁKS  Form: '+forma)
 st.header('Fixtures')
 #pd1['index1'] = pd1.index
 #cols = pd1.columns.tolist()
@@ -92,6 +93,7 @@ df_goalsagainstminutes=df_goalsagainstminutes.astype(float)
 st.header('Goals Against, Minutes')
 st.table(df_goalsagainstminutes.style.format({'0-15': '{:.1f}', '16-30': '{:.1f}', '31-45': '{:.1f}','46-60':'{:.1f}','61-75':'{:.1f}','76-90':'{:.1f}', '91-105':'{:.1f}','106-120':'{:.1f}'}))
 #st.dataframe(df_goalsforminutes)
-
+st.header('Our league')
+st.table(our_league_df)
 
 ##df['col'] = df['col'].str.rstrip('%').astype('float') / 100.0
