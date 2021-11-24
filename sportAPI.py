@@ -94,6 +94,6 @@ st.header('Goals Against, Minutes')
 st.table(df_goalsagainstminutes.style.format({'0-15': '{:.1f}', '16-30': '{:.1f}', '31-45': '{:.1f}','46-60':'{:.1f}','61-75':'{:.1f}','76-90':'{:.1f}', '91-105':'{:.1f}','106-120':'{:.1f}'}))
 #st.dataframe(df_goalsforminutes)
 st.header('Our league')
-st.table(our_league_df)
+st.dataframe(our_league_df)
 
 ##df['col'] = df['col'].str.rstrip('%').astype('float') / 100.0
