@@ -156,7 +156,7 @@ allgamelose_list,
 goalsDiff_list,
 allgamegoalfor_list,
 allgamegoalagainst_list,points_list))
-dfleagueall = pd.DataFrame(list_of_tuples_all, columns = ['rank', 'team_id','team_name','form','status','description','played','win','draw','lose','goals_diff','goals_for','goals_against','points']) 
+dfleagueall = pd.DataFrame(list_of_tuples_all, columns = ['rank', 'team_id','team_name','team form','status','description','played','win','draw','lose','goals_diff','goals_for','goals_against','points']) 
 dfleagueall=dfleagueall.set_index('rank')
 #%% streamlit run sportAPI.py
 
