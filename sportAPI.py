@@ -12,9 +12,32 @@ with open('sample.json', 'r') as openfile:
 
     # Reading from json file
     json_object = json.load(openfile)
-our_league={'Name':['Marcin', 'Michał','Tomek', 'Darek'],'Points':['13','13','11','7']}
+our_league={'Name':['Michał', 'Marcin','Tomek', 'Darek'],'Points':['14','13','11','7']}
 our_league_df=pd.DataFrame(our_league) 
 #print(json.dumps(json_object, indent=4))
+###############################3
+biggest_streak=json_object['response']['biggest']['streak']
+#print(biggest_streak)
+biggest_wins=json_object['response']['biggest']['wins']
+biggest_loses=json_object['response']['biggest']['loses']
+biggest_goals_for=json_object['response']['biggest']['goals']['for']
+biggest_goals_against=json_object['response']['biggest']['goals']['against']
+clean_sheet=json_object['response']['clean_sheet']
+failed_to_score=json_object['response']['failed_to_score']
+penalty_scored=json_object['response']['penalty']['scored']
+penalty_missed=json_object['response']['penalty']['missed']
+#cards_yellow=json_object['response']['cards']['yellow']
+biggest_streak_pd=pd.DataFrame([biggest_streak],index=['biggest_streak'])
+biggest_wins_pd=pd.DataFrame([biggest_wins],index=['biggest_wins'])
+biggest_loses_pd=pd.DataFrame([biggest_loses],index=['biggest_loses'])
+biggest_goals_for_pd=pd.DataFrame([biggest_goals_for],index=['biggest_goals_for'])
+biggest_goals_against_pd=pd.DataFrame([biggest_goals_against],index=['biggest_goals_against'])
+cleansheet_pd=pd.DataFrame([clean_sheet], index=['clean_sheet'])
+
+failed_to_score_pd=pd.DataFrame([failed_to_score], index=['failed_to_score'])
+
+penalty_pd=pd.DataFrame([penalty_scored, penalty_missed],index=['penalty_scored','penalty_missed'])
+#####################################
 forma=json_object['response']['form']
 fixtures=json_object['response']['fixtures']
 pd1=pd.DataFrame.from_dict(fixtures)
@@ -173,6 +196,7 @@ st.markdown(f""" <style>
         padding-left: {padding}rem;
         padding-bottom: {padding}rem;
     }} </style> """, unsafe_allow_html=True)
+st.header('League Table')
 st.dataframe(dfleagueall)
 st.header('ŁKS  Form: '+forma)
 st.header('Fixtures')
@@ -212,7 +236,26 @@ df_goalsagainstminutes=df_goalsagainstminutes.astype(float)
 st.header('Goals Against, Minutes')
 st.table(df_goalsagainstminutes.style.format({'0-15': '{:.1f}', '16-30': '{:.1f}', '31-45': '{:.1f}','46-60':'{:.1f}','61-75':'{:.1f}','76-90':'{:.1f}', '91-105':'{:.1f}','106-120':'{:.1f}'}))
 #st.dataframe(df_goalsforminutes)
-st.header('Our league')
-st.table(our_league_df)
+
 
 ##df['col'] = df['col'].str.rstrip('%').astype('float') / 100.0
+#NOWE
+
+st.header('Biggest Streak')
+st.dataframe(biggest_streak_pd)
+st.header('Biggest Wins')
+st.dataframe(biggest_wins_pd)
+st.header('Biggest Loses')
+st.dataframe(biggest_loses_pd)
+st.header('Biggest Goals For')
+st.dataframe(biggest_goals_for_pd)
+st.header('Biggest Goals Against')
+st.dataframe(biggest_goals_against_pd)
+st.header('Clean Sheet')
+st.dataframe(cleansheet_pd)
+st.header('Failed To Score')
+st.dataframe(failed_to_score_pd)
+st.header('Penalties')
+st.dataframe(penalty_pd)
+st.header('Our league')
+st.table(our_league_df)
