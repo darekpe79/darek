@@ -258,5 +258,21 @@ with streamlit_analytics.track():
     st.dataframe(failed_to_score_pd)
     st.header('Penalties')
     st.dataframe(penalty_pd)
-    st.header('Our league table')
+    
+    #####OPPONENT########
+    with open('opponent.json', 'r') as openfile:
+    
+        # Reading from json file
+        json_object_opponent = json.load(openfile)
+    print(json.dumps(json_object_opponent, indent=4))
+    Oppo_name=json_object_opponent['response']['team']['name']
+    Oppo_forma=json_object_opponent['response']['form']
+    Oppo_fixtures=json_object_opponent['response']['fixtures']
+    st.header('Next Opponent: '+Oppo_name)
+    st.subheader('Forma: '+Oppo_forma)
+    st.subheader('Fixtures')
+    Oppo_fixtures_pd=pd.DataFrame.from_dict(Oppo_fixtures)
+    st.table(Oppo_fixtures_pd)
+    st.header('Our league')
     st.table(our_league_df)
+    
