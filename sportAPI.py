@@ -258,5 +258,5 @@ with streamlit_analytics.track():
     st.dataframe(failed_to_score_pd)
     st.header('Penalties')
     st.dataframe(penalty_pd)
-    st.header('Our league')
+    st.header('Our league table')
     st.table(our_league_df)
