@@ -13,7 +13,7 @@ with streamlit_analytics.track():
         # Reading from json file
         json_object = json.load(openfile)
         
-    our_league={'Name':['Michał', 'Marcin','Tomek', 'Darek'],'Points':['14','13','11','7']}
+    our_league={'Name':['Michał', 'Marcin','Tomek', 'Darek'],'Points':['14','13','11','8']}
     our_league_df=pd.DataFrame(our_league) 
     #print(json.dumps(json_object, indent=4))
     ###############################3
