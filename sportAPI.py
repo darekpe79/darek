@@ -275,5 +275,5 @@ with streamlit_analytics.track():
     st.subheader('Fixtures')
     Oppo_fixtures_pd=pd.DataFrame.from_dict(Oppo_fixtures)
     st.table(Oppo_fixtures_pd)
-    st.header('Our league')
-    st.table(our_league_df)
+    #st.header('Our league')
+    #st.table(our_league_df)
