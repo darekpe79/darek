@@ -259,7 +259,7 @@ with streamlit_analytics.track():
     st.header('Penalties')
     st.dataframe(penalty_pd)
     st.title('PLAYERS')
-    LKS_stats_to_excel = pd.read_excel (r"ŁKS_stats.xlsx")
+    LKS_stats_to_excel = pd.read_excel (r"LKS.xlsx")
     st.dataframe(LKS_stats_to_excel)
     #####OPPONENT########
     with open('opponent.json', 'r') as openfile:
