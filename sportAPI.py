@@ -199,7 +199,11 @@ with streamlit_analytics.track():
         }} </style> """, unsafe_allow_html=True)
     st.header('League Table')
     st.dataframe(dfleagueall)
-    st.header('ŁKS  Form: '+forma)
+    if forma:
+        st.header('ŁKS  Form: '+forma)
+    else:
+        st.header('ŁKS  Form: no data')
+        
     st.header('Fixtures')
     #pd1['index1'] = pd1.index
     #cols = pd1.columns.tolist()
